@@ -7,11 +7,11 @@ features:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: sepolia
+    network: zklink-nova
     source:
-      address: '0x11BAa8360DD2f9de11EA93501C2022E1260DC02f'
+      address: '0x0c283f1a3C6981eE623cb4E8AcC4f450f39D0815'
       abi: Factory
-      startBlock: 5737252
+      startBlock: 2099
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -37,7 +37,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: sepolia
+    network: zklink-nova
     source:
       abi: Pool
     mapping:
