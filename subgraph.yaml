@@ -9,9 +9,9 @@ dataSources:
     name: Factory
     network: zklink-nova
     source:
-      address: '0x0c283f1a3C6981eE623cb4E8AcC4f450f39D0815'
+      address: '0xf8D35842f37800E349A993503372fb9E2CBb7E3d'
       abi: Factory
-      startBlock: 2099
+      startBlock: 1676255
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
