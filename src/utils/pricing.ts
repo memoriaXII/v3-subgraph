@@ -6,23 +6,23 @@ import { Bundle, Pool, Token } from './../types/schema'
 import { ONE_BD, ZERO_BD, ZERO_BI } from './constants'
 
 //TODO: Upate token list
-const WETH_ADDRESS = '0x8280a4e7D5B3B658ec4580d3Bc30f5e50454F169'
-const USDC_WETH_03_POOL = '0xb96185d61F25B91eC7128Eb723ebb42d03116FB1'
+const WETH_ADDRESS = '0x8280a4e7d5b3b658ec4580d3bc30f5e50454f169'
+const USDC_WETH_03_POOL = '0xb96185d61f25b91ec7128eb723ebb42d03116fb1'
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with s
 export const WHITELIST_TOKENS: string[] = [
   WETH_ADDRESS, // WETH
-  '0x1a1A3b2ff016332e866787B311fcB63928464509', // USDC
-  '0x2F8A25ac62179B31D62D7F80884AE57464699059' // USDT
+  '0x1a1a3b2ff016332e866787b311fcb63928464509', // usdc
+  '0x2f8a25ac62179b31d62d7f80884ae57464699059' // usdt
 ]
 
 const STABLE_COINS: string[] = [
-  '0x1a1A3b2ff016332e866787B311fcB63928464509', // USDC
-  '0x2F8A25ac62179B31D62D7F80884AE57464699059' // USDT
+  '0x1a1a3b2ff016332e866787b311fcb63928464509', // usdc
+  '0x2f8a25ac62179b31d62d7f80884ae57464699059' // usdt
 ]
 
-const MINIMUM_ETH_LOCKED = BigDecimal.fromString('60')
+const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.1')
 
 const Q192 = BigInt.fromI32(2).pow(192 as u8)
 export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, token1: Token): BigDecimal[] {
