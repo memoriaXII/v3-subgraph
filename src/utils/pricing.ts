@@ -7,6 +7,7 @@ import { ONE_BD, ZERO_BD, ZERO_BI } from './constants'
 
 //TODO: Upate token list
 const WETH_ADDRESS = '0x8280a4e7d5b3b658ec4580d3bc30f5e50454f169'
+//TODO: USDC will be token0
 const USDC_WETH_03_POOL = '0xb96185d61f25b91ec7128eb723ebb42d03116fb1'
 
 // token where amounts should contribute to tracked volume and liquidity
@@ -22,6 +23,7 @@ const STABLE_COINS: string[] = [
   '0x2f8a25ac62179b31d62d7f80884ae57464699059' // usdt
 ]
 
+//TODO: Update minimum eth locked, really really important !!!!
 const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.1')
 
 const Q192 = BigInt.fromI32(2).pow(192 as u8)
