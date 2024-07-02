@@ -11,4 +11,13 @@ Pending Changes at same URL
 3. graph codegen
 4. graph codegen && graph build
 4. graph deploy --studio test-swap
+
 # v3-subgraph
+
+local node testing
+
+1. docker-compose up
+2. graph codegen
+3. graph build
+4. graph deploy --node <http://localhost:8020/> --ipfs <http://localhost:5001> novaswap
+5. docker-compose logs -f graph-node (log)
