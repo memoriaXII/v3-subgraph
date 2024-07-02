@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { BigDecimal, BigInt } from '@graphprotocol/graph-ts'
+import { BigDecimal, BigInt,log } from '@graphprotocol/graph-ts'
 
 import { exponentToBigDecimal, safeDiv } from '../utils/index'
 import { Bundle, Pool, Token } from './../types/schema'
@@ -8,7 +8,7 @@ import { ONE_BD, ZERO_BD, ZERO_BI } from './constants'
 //TODO: Upate token list
 const WETH_ADDRESS = '0x8280a4e7d5b3b658ec4580d3bc30f5e50454f169'
 //TODO: USDC will be token0
-const USDC_WETH_03_POOL = '0x9af9C294Da04c4d4D74D0b3eBF6047C628E179A3'
+const USDC_WETH_03_POOL = '0x9af9c294da04c4d4d74d0b3ebf6047c628e179a3'
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with s
@@ -24,7 +24,7 @@ const STABLE_COINS: string[] = [
 ]
 
 //TODO: Update minimum eth locked, really really important !!!!
-const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.1')
+const MINIMUM_ETH_LOCKED = BigDecimal.fromString('0.0001')
 
 const Q192 = BigInt.fromI32(2).pow(192 as u8)
 export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, token1: Token): BigDecimal[] {
@@ -43,6 +43,7 @@ export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
   const usdcPool = Pool.load(USDC_WETH_03_POOL) // dai is token0
   if (usdcPool !== null) {
+    log.info('USDC_WETH_POOL: {}', [usdcPool.token0Price.toString()])
     return usdcPool.token0Price
   } else {
     return ZERO_BD
